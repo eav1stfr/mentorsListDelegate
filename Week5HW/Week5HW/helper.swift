@@ -1,31 +1,39 @@
-import Foundation
+//
+//  MediaContentsListView.swift
+//  ProtocolsDelegateAndMVC
+//
+//  Created by Askar Ulubayev on 19.10.2024.
+//
+
 import UIKit
 
-protocol MentorsViewDelegate: AnyObject {
-    func mentorsListViewDidSelect(content: MentorInfo)
+protocol MediaContentsListViewDelegate: AnyObject {
+    func mediaContentsListViewDidSelect(content: MediaContent)
 }
 
-final class MentorsListView: UIView {
-    weak var delegate: MentorsViewDelegate?
+final class MediaContentsListView: UIView {
+    
+    weak var delegate: MediaContentsListViewDelegate?
     
     private let tableView = UITableView()
-    private var contents: [MentorInfo] = []
+    private var contents: [MediaContent] = []
     
     override init(frame: CGRect) {
         super.init(frame: frame)
+        setupSubviews()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func configure(contents: [MentorInfo]) {
+    func configure(contents: [MediaContent]) {
         self.contents = contents
         tableView.reloadData()
     }
     
-    func update(content: MentorInfo) {
-        guard let contentIndex = contents.firstIndex(where: {$0.name == content.name}) else {
+    func update(content: MediaContent) {
+        guard let contentIndex = contents.firstIndex(where: { $0.title == content.title }) else {
             return
         }
         contents[contentIndex] = content
@@ -33,13 +41,16 @@ final class MentorsListView: UIView {
     }
 }
 
-extension MentorsListView: UITableViewDataSource {
+extension MediaContentsListView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return contents.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        guard let contentCell = tableView.dequeueReusableCell(withIdentifier: "MentorInfoTableCell", for: indexPath) as? MentorInfoTableCell else {
+        guard let contentCell = tableView.dequeueReusableCell(
+            withIdentifier: "MediaContentCell",
+            for: indexPath
+        ) as? MediaContentCell else {
             return UITableViewCell()
         }
         contentCell.configure(content: contents[indexPath.row])
@@ -47,20 +58,26 @@ extension MentorsListView: UITableViewDataSource {
     }
 }
 
-extension MentorsListView: UITableViewDelegate {
+extension MediaContentsListView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-        delegate?.mentorsListViewDidSelect(content: contents[indexPath.row])
+        delegate?.mediaContentsListViewDidSelect(content: contents[indexPath.row])
     }
 }
 
-private extension MentorsListView {
-    func setupView() {
+private extension MediaContentsListView {
+    func setupSubviews() {
+        addSubviews()
+        setupSubviewsConstraints()
+        addSubviewsStyles()
+    }
+    
+    func addSubviews() {
         addSubview(tableView)
+    }
+    
+    func setupSubviewsConstraints() {
         tableView.translatesAutoresizingMaskIntoConstraints = false
-        tableView.dataSource = self
-        tableView.delegate = self
-        tableView.register(MentorInfoTableCell.self, forCellReuseIdentifier: "MentorInfoTableCell")
         NSLayoutConstraint.activate([
             tableView.topAnchor.constraint(equalTo: topAnchor),
             tableView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -68,4 +85,11 @@ private extension MentorsListView {
             tableView.bottomAnchor.constraint(equalTo: bottomAnchor)
         ])
     }
+    
+    func addSubviewsStyles() {
+        tableView.dataSource = self
+        tableView.delegate = self
+        tableView.register(MediaContentCell.self, forCellReuseIdentifier: "MediaContentCell")
+    }
 }
+

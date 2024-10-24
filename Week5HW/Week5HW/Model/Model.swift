@@ -9,13 +9,13 @@ import Foundation
 import UIKit
 
 protocol MentorInfo {
-    var name: String { get }
+    var name: String { get set }
     var shortName: String { get }
     var backgroundColor: UIColor { get set }
 }
 
 struct Mentor {
-    let name: String
+    var name: String
     var backgroundColor: UIColor
 }
 
