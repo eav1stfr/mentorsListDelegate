@@ -21,6 +21,9 @@
 		AF9775FD2CCA551A006244E4 /* MentorsInfoService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9775FC2CCA551A006244E4 /* MentorsInfoService.swift */; };
 		AF9775FF2CCA5529006244E4 /* helper3.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9775FE2CCA5529006244E4 /* helper3.swift */; };
 		AF9776012CCA59F3006244E4 /* helper4.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9776002CCA59F3006244E4 /* helper4.swift */; };
+		AF9776032CCA767C006244E4 /* MentorDetailsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9776022CCA767C006244E4 /* MentorDetailsViewController.swift */; };
+		AF9776052CCA7692006244E4 /* helper5.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9776042CCA7692006244E4 /* helper5.swift */; };
+		AF9776082CCA79BB006244E4 /* CircleColorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AF9776072CCA79BB006244E4 /* CircleColorView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +43,9 @@
 		AF9775FC2CCA551A006244E4 /* MentorsInfoService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorsInfoService.swift; sourceTree = "<group>"; };
 		AF9775FE2CCA5529006244E4 /* helper3.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper3.swift; sourceTree = "<group>"; };
 		AF9776002CCA59F3006244E4 /* helper4.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper4.swift; sourceTree = "<group>"; };
+		AF9776022CCA767C006244E4 /* MentorDetailsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MentorDetailsViewController.swift; sourceTree = "<group>"; };
+		AF9776042CCA7692006244E4 /* helper5.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = helper5.swift; sourceTree = "<group>"; };
+		AF9776072CCA79BB006244E4 /* CircleColorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CircleColorView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,6 +78,7 @@
 		AF9775D62CCA357D006244E4 /* Week5HW */ = {
 			isa = PBXGroup;
 			children = (
+				AF9776062CCA79A4006244E4 /* CustomElements */,
 				AF9775EE2CCA375E006244E4 /* Model */,
 				AF9775EC2CCA3746006244E4 /* View */,
 				AF9775EB2CCA373B006244E4 /* Controller */,
@@ -86,6 +93,7 @@
 				AF9775FA2CCA46F3006244E4 /* helperTwo.swift */,
 				AF9775FE2CCA5529006244E4 /* helper3.swift */,
 				AF9776002CCA59F3006244E4 /* helper4.swift */,
+				AF9776042CCA7692006244E4 /* helper5.swift */,
 			);
 			path = Week5HW;
 			sourceTree = "<group>";
@@ -119,8 +127,17 @@
 			isa = PBXGroup;
 			children = (
 				AF9775F82CCA4584006244E4 /* MentorInfoTableCell.swift */,
+				AF9776022CCA767C006244E4 /* MentorDetailsViewController.swift */,
 			);
 			path = TableRelated;
+			sourceTree = "<group>";
+		};
+		AF9776062CCA79A4006244E4 /* CustomElements */ = {
+			isa = PBXGroup;
+			children = (
+				AF9776072CCA79BB006244E4 /* CircleColorView.swift */,
+			);
+			path = CustomElements;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -194,6 +211,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				AF9776012CCA59F3006244E4 /* helper4.swift in Sources */,
+				AF9776032CCA767C006244E4 /* MentorDetailsViewController.swift in Sources */,
+				AF9776082CCA79BB006244E4 /* CircleColorView.swift in Sources */,
 				AF9775DC2CCA357D006244E4 /* ViewController.swift in Sources */,
 				AF9775F42CCA3BFB006244E4 /* MentorsListView.swift in Sources */,
 				AF9775F62CCA3F50006244E4 /* helper.swift in Sources */,
@@ -205,6 +224,7 @@
 				AF9775F02CCA38CB006244E4 /* Model.swift in Sources */,
 				AF9775FD2CCA551A006244E4 /* MentorsInfoService.swift in Sources */,
 				AF9775F22CCA3BE5006244E4 /* MainViewController.swift in Sources */,
+				AF9776052CCA7692006244E4 /* helper5.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

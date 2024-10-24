@@ -32,7 +32,7 @@ extension MainViewController: MentorsInfoServiceObserver {
 
 extension MainViewController: MentorsViewDelegate {
     func mentorsListViewDidSelect(content: MentorInfo) {
-        <#code#>
+        let detailsViewController = 
     }
     
     
